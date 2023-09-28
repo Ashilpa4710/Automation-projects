@@ -1,0 +1,19 @@
+package sel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ById;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class login {
+	public static void main(String arg[]) {
+		System.setProperty("WebDriver.chrome.driver", "path\\chrome.driver.exe")
+		WebDriver driver=new ChromeDriver();
+		driver.get("link");
+		driver .findElement(By.id("Email")).sendKeys("ash");
+		driver.findElement(By.id("pass")).sendKeys("sd");
+		driver.findElement(By.id("login")).click();
+		
+	}
+
+}

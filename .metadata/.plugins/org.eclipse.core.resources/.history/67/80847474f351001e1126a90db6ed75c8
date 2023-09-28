@@ -1,0 +1,28 @@
+package sel;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class mulwindowsinsta {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\SWT\\Desktop\\selenium\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.instagram.com/accounts/login/?hl=en");
+		driver.findElement(By.xpath("x1lliihq x1plvlek xryxfnj x1n2onr6 x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x1i0vuye x1fhwpqd xo1l8bm x7l2uk3 x10wh9bi x1wdrske x8viiok x18hxmgj")).click();
+		Set<String>a=driver.getWindowHandles();
+		Iterator<String>it=a.iterator();
+		while(it.hasNext())
+		{
+			String childwindow=it.next();
+			driver.switchTo().window(childwindow);
+		}
+	}
+
+}
